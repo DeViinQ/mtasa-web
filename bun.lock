@@ -5,6 +5,7 @@
       "name": "mtasa-web",
       "dependencies": {
         "@fontsource-variable/finlandica": "^5.2.6",
+        "@fontsource-variable/onest": "^5.2.7",
         "@tailwindcss/vite": "^4.1.4",
         "astro": "^5.7.5",
         "tailwindcss": "^4.1.4",
@@ -85,6 +86,8 @@
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.3", "", { "os": "win32", "cpu": "x64" }, "sha512-ICgUR+kPimx0vvRzf+N/7L7tVSQeE3BYY+NhHRHXS1kBuPO7z2+7ea2HbhDyZdTephgvNvKrlDDKUexuCVBVvg=="],
 
     "@fontsource-variable/finlandica": ["@fontsource-variable/finlandica@5.2.6", "", {}, "sha512-N1ny7/I0W+Te6cx4HcTOj5b0gyeaDkG91jblNzoDyF9MqovkwVhOOWGiiMHPjbeWi4RR3VYbz0RlVHD/F2geCg=="],
+
+    "@fontsource-variable/onest": ["@fontsource-variable/onest@5.2.7", "", {}, "sha512-iGsSGXwdqvaG5zJ6pmt7TKakYd5ADCzEZ4SPpaeueHrNiK3i6IbKrap4aK5vlak9E275BAHXv8Ac134r/PBREA=="],
 
     "@img/sharp-darwin-arm64": ["@img/sharp-darwin-arm64@0.33.5", "", { "optionalDependencies": { "@img/sharp-libvips-darwin-arm64": "1.0.4" }, "os": "darwin", "cpu": "arm64" }, "sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ=="],
 
