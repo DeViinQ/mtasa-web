@@ -1,0 +1,57 @@
+---
+import ResourcesCard from "./ResourcesCard.astro";
+---
+
+<section class="mt-24 px-48">
+  <span
+    class="text-blue-600 bg-blue-900/20 px-2 py-1 rounded-full border border-gray-600"
+    >Resources</span
+  >
+  <h1 class="text-white text-3xl font-extrabold mt-2">
+    More downloaded resources
+  </h1>
+  <div class="grid grid-cols-3 gap-4 mt-10">
+    <ResourcesCard
+      title="Zday script"
+      description="Zday, a zombie infestation script full info here: http://forum.multitheftauto.com/viewtopic.php?f=91&t=2..p;start=46mta wiki page here: http://wiki.multitheftauto.com/wiki/Slothman/Zombies."
+      category="Script"
+      author="slothman"
+      downloads={157887}
+    />
+    <ResourcesCard
+      title="GUI Editor"
+      description="GUI Editor is a resource designed to allow creation and manipulation of GUI elements in-game, with the ability to generate the corresponding Lua code and output it to a file."
+      category="Misc"
+      author="R3mp"
+      downloads={124791}
+    />
+    <ResourcesCard
+      title="House_System"
+      description="This is a House System resource. It allows you to build a house in any place and with any interior you want. Other players can buy your houses. This script works with SQL database so be sure that address to your resources folder has only english letters."
+      category="Script"
+      author="DakiLLa"
+      downloads={85971}
+    />
+    <ResourcesCard
+      title="Bank System"
+      description="Deposit your money at any banks and get them out when you join the server next time. You can get rich if don't die losing all or some of your money; go to the bank as often as you can to prevent losing any money :)"
+      category="Script"
+      author="50p"
+      downloads={77469}
+    />
+    <ResourcesCard
+      title="Zombie Gamemode"
+      description="A gamemode for ZDay or survival servers, featuring multiple zombie systems, survival mechanics like hunger and looting, plus dynamic events for a more immersive experience."
+      category="Gamemode"
+      author="Stryp"
+      downloads={75126}
+    />
+    <ResourcesCard
+      title="Ingame Handling Editor"
+      description="Simple explanation: use this script for things like making your car's ENGINE faster (tune your car speed), or to make your car drive differently"
+      category="Script"
+      author="John_Michael, qaisjp, Remi-X"
+      downloads={71209}
+    />
+  </div>
+</section>
