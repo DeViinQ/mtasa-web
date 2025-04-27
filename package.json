@@ -1,0 +1,17 @@
+{
+  "name": "mtasa-web",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/finlandica": "^5.2.6",
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.5",
+    "tailwindcss": "^4.1.4"
+  }
+}
