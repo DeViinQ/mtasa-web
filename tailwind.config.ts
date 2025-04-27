@@ -1,0 +1,27 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+    content: [
+        './src/**/*.{html,ts,tsx,js,jsx}', // Adjust paths based on your project structure
+    ],
+    theme: {
+        extend: {
+            "animation": {
+              "background-shine": "background-shine 2s linear infinite"
+            },
+            "keyframes": {
+              "background-shine": {
+                "from": {
+                  "backgroundPosition": "0 0"
+                },
+                "to": {
+                  "backgroundPosition": "-200% 0"
+                }
+              }
+            }
+          },
+    },
+    plugins: [],
+};
+
+export default config;
