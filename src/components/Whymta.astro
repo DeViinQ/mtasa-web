@@ -1,7 +1,52 @@
 ---
-
+import Whycards from "./Whycards.astro";
+import Users from "./icons/Users.astro";
+import Code from "./icons/Code.astro";
+import World from "./icons/World.astro";
+import Github from "./icons/Github.astro";
+import Server from "./icons/Server.astro";
+import Diamond from "./icons/Diamond.astro";
 ---
 
-<section class="mt-48">
+<section class="mt-48 text-center max-w-4/5 mx-auto">
   <h1 class="text-white text-5xl font-extrabold">Why choose MTA:SA?</h1>
+  <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto">
+    eading the platform in a stable and innovative way on GTA San Andreas since
+    2006, delivering quality experiences and a strong community every step of
+    the way.
+  </p>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
+    <Whycards
+      image={Users}
+      title="Masive Community"
+      description="Supports up to 1000 players per server with optimized synchronization and minimal latency."
+    />
+    <Whycards
+      image={Code}
+      title="Lua Scripting"
+      description="Scripting with more than 1000 native functions in lua with compatibility in more languages such as html, js, css or c ++."
+    />
+    <Whycards
+      image={World}
+      title="Active Community"
+      description="More than 15 years of continuous development with a global community of players and developers."
+    />
+    <Whycards
+      image={Github}
+      width="96"
+      height="96"
+      title="Open Source"
+      description="Completely open source project under GPLv3 license, with contributions from the community."
+    />
+    <Whycards
+      image={Server}
+      title="Various Game Modes"
+      description="Roleplay, DayZ, Freeroam, Derby, Stunt, Racing, Deathmatch and unique custom modes."
+    />
+    <Whycards
+      image={Diamond}
+      title="Recurrent Updates"
+      description="We make recurring updates for our launcher, security, events, etc.."
+    />
+  </div>
 </section>
