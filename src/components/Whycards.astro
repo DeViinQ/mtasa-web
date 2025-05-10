@@ -3,19 +3,38 @@ const { image: Icon, title, description } = Astro.props;
 ---
 
 <div
-  class="group bg-gray-900/60 py-8 px-6 rounded-2xl border-2 border-gray-700 hover:border-blue-400 hover:bg-gray-800/60 transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-2"
+  class="group bg-gray-900/70 py-8 px-7 rounded-2xl border-2 border-gray-700 hover:border-blue-400 hover:bg-blue-900/20 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transform hover:-translate-y-2 relative overflow-hidden"
 >
-  <figure
-    class="flex justify-center items-center bg-gradient-to-br from-blue-700/50 to-blue-400/50 p-4 rounded-2xl w-max mx-auto text-blue-300"
+  <!-- Efecto de brillo en hover -->
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-blue-600/0 to-blue-400/0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0"
   >
-    <Icon class="w-16 h-16" />
+  </div>
+
+  <!-- Icono con efecto mejorado -->
+  <figure
+    class="flex justify-center items-center bg-gradient-to-br from-blue-700/60 to-blue-400/60 p-5 rounded-2xl w-max mx-auto text-blue-200 shadow-md shadow-blue-500/20 group-hover:shadow-blue-400/30 group-hover:scale-105 transition-all duration-300 relative z-10"
+  >
+    <Icon
+      class="w-16 h-16 group-hover:text-white transition-colors duration-300"
+    />
   </figure>
+
+  <!-- Título con efecto mejorado -->
   <h3
-    class="text-yellow-300 text-2xl font-bold mt-6 group-hover:text-yellow-200 transition-colors duration-300"
+    class="text-yellow-300 text-2xl font-bold mt-7 mb-1 group-hover:text-yellow-200 transition-colors duration-300 relative z-10"
   >
     {title}
   </h3>
-  <p class="text-gray-400 mt-3 text-base leading-relaxed">
+
+  <!-- Línea decorativa -->
+  <div
+    class="w-12 h-1 bg-blue-500/50 rounded-full mx-auto mb-4 group-hover:w-24 group-hover:bg-blue-400 transition-all duration-500"
+  >
+  </div>
+
+  <!-- Descripción con mejor contraste -->
+  <p class="text-gray-300 mt-3 text-base leading-relaxed relative z-10">
     {description}
   </p>
 </div>
