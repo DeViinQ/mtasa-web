@@ -1,0 +1,43 @@
+---
+import TutorialCard from "../components/TutorialCard.astro";
+import Title from "./ui/Title.astro";
+---
+
+<section class="mt-24 text-center max-w-4/5 mx-auto">
+  <Title title="Tutorials of MTA:SA Lua" />
+  <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto">
+    Aprende a programar en MTA:SA con nuestros tutoriales para todos los niveles
+  </p>
+
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+    <TutorialCard
+      title="Configurar Notepad++ para MTA:SA"
+      description="Aprende a configurar Notepad++ para programar en Lua para MTA:SA con resaltado de sintaxis y autocompletado."
+      level="principiante"
+      duration="4 minutos"
+      author="Nicolas ECM"
+      lessons={15}
+      image="https://i.ytimg.com/vi/FSdPG-FN2bs/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDcCgegLd_3ZSrLE2wkzCUISdCvIg"
+    />
+
+    <TutorialCard
+      title="Sistemas de Login"
+      description="Crea un sistema de login para mta con HTML5, CSS3 y JavaScript."
+      level="intermedio"
+      duration="52 minutos"
+      author="Nicolas ECM"
+      lessons={1}
+      image="https://i.ytimg.com/vi/MAjBvxlFQJk/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAaotC2W_N3dDxRfrgUPXhuYKfUFg"
+    />
+
+    <TutorialCard
+      title="Paneles con DxLibrary"
+      description="Video de como realizar paneles con la libreria dx."
+      level="avanzado"
+      duration="39 minutos"
+      author="Nicolas ECM"
+      lessons={1}
+      image="https://i.ytimg.com/vi/Ikw0n39GLMU/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCwMqYagME-K8ny98svwBlIDiPgfQ"
+    />
+  </div>
+</section>

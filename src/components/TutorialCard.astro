@@ -1,0 +1,183 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  level: "principiante" | "intermedio" | "avanzado";
+  duration: string;
+  author: string;
+  lessons: number;
+  image?: string;
+  videoUrl?: string;
+}
+
+const {
+  title,
+  description,
+  level,
+  duration,
+  author,
+  lessons,
+  image,
+  videoUrl,
+} = Astro.props;
+
+function getYoutubeVideoId(url: string) {
+  if (!url) return null;
+
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+
+  return match && match[2].length === 11 ? match[2] : null;
+}
+
+const youtubeVideoId = videoUrl ? getYoutubeVideoId(videoUrl) : null;
+
+// Configuración según el nivel
+const levelConfig = {
+  principiante: {
+    color: "green",
+    bgColor: "bg-green-700/80",
+    borderColor: "border-green-600/50",
+    hoverColor: "group-hover:bg-green-600/50",
+    textColor: "text-green-300",
+  },
+  intermedio: {
+    color: "yellow",
+    bgColor: "bg-yellow-700/80",
+    borderColor: "border-yellow-600/50",
+    hoverColor: "group-hover:bg-yellow-600/50",
+    textColor: "text-yellow-300",
+  },
+  avanzado: {
+    color: "red",
+    bgColor: "bg-red-700/80",
+    borderColor: "border-red-600/50",
+    hoverColor: "group-hover:bg-red-600/50",
+    textColor: "text-red-300",
+  },
+};
+
+const config = levelConfig[level];
+---
+
+<div
+  class="group relative bg-gradient-to-br from-blue-900/30 to-blue-800/30 border border-blue-800/40 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:border-blue-500/70 hover:-translate-y-1 flex flex-col h-full"
+>
+  <!-- Efecto de brillo en hover -->
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-blue-600/0 to-blue-400/0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0 rounded-xl"
+  >
+  </div>
+
+  <!-- Video de YouTube o imagen del curso -->
+  <div class="relative h-48 overflow-hidden">
+    {
+      youtubeVideoId ? (
+        <div class="w-full h-full">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+            title={title}
+            class="w-full h-full object-cover"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+      ) : (
+        <img
+          src={image}
+          alt={`Imagen del curso ${title}`}
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      )
+    }
+
+    <!-- Etiqueta de nivel -->
+    <div
+      class={`absolute top-4 right-4 ${config.bgColor} ${config.borderColor} px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide transition-all duration-300 ${config.hoverColor} transform group-hover:scale-105 ${config.textColor}`}
+    >
+      {level.charAt(0).toUpperCase() + level.slice(1)}
+    </div>
+  </div>
+
+  <div class="p-6 flex flex-col flex-grow">
+    <header class="mb-4">
+      <h2
+        class="text-white text-2xl font-bold group-hover:text-blue-200 transition-colors duration-300"
+      >
+        {title}
+      </h2>
+    </header>
+
+    <main class="mb-6 flex-grow">
+      <p
+        class="text-blue-200/90 text-sm leading-relaxed group-hover:text-blue-100 transition-colors duration-300"
+      >
+        {description}
+      </p>
+    </main>
+
+    <footer class="mt-auto">
+      <div class="flex justify-between items-center text-sm text-gray-400 mb-4">
+        <span class="flex items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          {duration}
+        </span>
+        <span class="flex items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
+          </svg>
+          {lessons} lecciones
+        </span>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <span class="text-yellow-300/90 text-sm font-semibold">
+          Por {author}
+        </span>
+        <button
+          class="bg-blue-600 z-10 hover:cursor-pointer hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 flex items-center gap-1"
+        >
+          Ver curso
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>

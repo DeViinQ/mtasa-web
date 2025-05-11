@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@fontsource-variable/finlandica": "^5.2.6",
+    "@fontsource-variable/hanken-grotesk": "^5.2.5",
+    "@fontsource-variable/karla": "^5.2.5",
     "@fontsource-variable/onest": "^5.2.7",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",

@@ -1,0 +1,45 @@
+---
+import Title from "../components/ui/Title.astro";
+import MtaDownloadCard from "./MtaDownloadCard.astro";
+import Apple from "./icons/Apple.astro";
+import Windows from "./icons/Windows.astro";
+import Linux from "./icons/Linux.astro";
+---
+
+<section class="text-center">
+  <Title title="Download MTA:SA 1.6" />
+  <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto">
+    Download the stable version of multi theft auto san andreas with the news
+    characteristic.
+  </p>
+</section>
+
+<section class="mt-8 max-w-7xl mx-auto px-4">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <MtaDownloadCard
+      icon={Windows}
+      title="Windows"
+      os="Windows 7/8/10/11"
+      version="1.6"
+      size="32.5 MB"
+      description="Complete installer (152 MB) Includes client and server."
+    />
+    <MtaDownloadCard
+      icon={Apple}
+      title="MacOS"
+      os="MacOS 10.13+"
+      version="1.6"
+      size="32.5 MB"
+      description="MacOS installer (168 MB) Compatible with Apple Silicon."
+    />
+    <MtaDownloadCard
+      icon={Linux}
+      title="Linux"
+      os="Ubuntu, Debian, Arch"
+      version="1.6"
+      size="32.5 MB"
+      description="Distribution packages (145 MB) Includes dependencies."
+    />
+    <!-- Aquí podrás agregar más tarjetas para macOS y Linux -->
+  </div>
+</section>

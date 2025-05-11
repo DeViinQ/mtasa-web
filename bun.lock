@@ -5,6 +5,8 @@
       "name": "mtasa-web",
       "dependencies": {
         "@fontsource-variable/finlandica": "^5.2.6",
+        "@fontsource-variable/hanken-grotesk": "^5.2.5",
+        "@fontsource-variable/karla": "^5.2.5",
         "@fontsource-variable/onest": "^5.2.7",
         "@tailwindcss/vite": "^4.1.4",
         "astro": "^5.7.5",
@@ -86,6 +88,10 @@
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.3", "", { "os": "win32", "cpu": "x64" }, "sha512-ICgUR+kPimx0vvRzf+N/7L7tVSQeE3BYY+NhHRHXS1kBuPO7z2+7ea2HbhDyZdTephgvNvKrlDDKUexuCVBVvg=="],
 
     "@fontsource-variable/finlandica": ["@fontsource-variable/finlandica@5.2.6", "", {}, "sha512-N1ny7/I0W+Te6cx4HcTOj5b0gyeaDkG91jblNzoDyF9MqovkwVhOOWGiiMHPjbeWi4RR3VYbz0RlVHD/F2geCg=="],
+
+    "@fontsource-variable/hanken-grotesk": ["@fontsource-variable/hanken-grotesk@5.2.5", "", {}, "sha512-GqP563I1ngSkQgR3p6w1ojkFwIxZqIdj8297QW66zYTFb4j35wYeVGVwozTNia8O4K1g/MJOgYn41iEwy4FDgw=="],
+
+    "@fontsource-variable/karla": ["@fontsource-variable/karla@5.2.5", "", {}, "sha512-Gfjs0MTHnyo116y9UlekVY9ugFdugWZ/i6n5X5rfohbON3X/JkofC1vsEpa8DrpMzSV3rP9MY4VMPhu+T+Nylw=="],
 
     "@fontsource-variable/onest": ["@fontsource-variable/onest@5.2.7", "", {}, "sha512-iGsSGXwdqvaG5zJ6pmt7TKakYd5ADCzEZ4SPpaeueHrNiK3i6IbKrap4aK5vlak9E275BAHXv8Ac134r/PBREA=="],
 
