@@ -1,8 +1,11 @@
 ---
-const { icon: Icon, title, version, size, os, description } = Astro.props;
+const { icon: Icon, title, version, size, os, description, url } = Astro.props;
 ---
 
-<div
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
   class="bg-gray-900/40 p-6 rounded-xl border group border-gray-700 hover:border-blue-500 transition-all duration-300 hover:bg-gray-800/70 cursor-pointer group"
 >
   <div class="flex flex-col items-center justify-center gap-4">
@@ -46,4 +49,4 @@ const { icon: Icon, title, version, size, os, description } = Astro.props;
         clip-rule="evenodd"></path>
     </svg>
   </div>
-</div>
+</a>

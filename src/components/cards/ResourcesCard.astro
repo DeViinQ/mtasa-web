@@ -1,12 +1,5 @@
 ---
-interface Props {
-  title: string;
-  description: string;
-  category: string;
-  author: string;
-  downloads: number;
-}
-const { title, description, category, author, downloads } = Astro.props;
+const { title, description, category, author, downloads, url } = Astro.props;
 ---
 
 <div
@@ -70,7 +63,9 @@ const { title, description, category, author, downloads } = Astro.props;
     </div>
 
     <a
-      href="/"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       class="inline-flex cursor-pointer items-center justify-center gap-2 text-white bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 px-7 py-3 rounded-xl text-sm font-bold shadow-xl shadow-blue-600/30 hover:shadow-blue-500/50 border border-blue-500/20 hover:border-blue-400/40 backdrop-blur-sm relative overflow-hidden group"
     >
       <!-- Efecto de brillo en hover -->
