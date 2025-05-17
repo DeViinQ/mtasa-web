@@ -1,21 +1,22 @@
 ---
 import Title from "../components/ui/Title.astro";
-import MtaDownloadCard from "./MtaDownloadCard.astro";
+import MtaDownloadCard from "../components/cards/MtaDownloadCard.astro";
 import Apple from "./icons/Apple.astro";
 import Windows from "./icons/Windows.astro";
 import Linux from "./icons/Linux.astro";
+import Dangerous from "./icons/Dangerous.astro";
 ---
 
-<section class="text-center">
+<section class="text-center px-4 sm:px-6 lg:px-8">
   <Title title="Download MTA:SA 1.6" />
   <p class="text-gray-400 text-xl mt-4 max-w-2xl mx-auto">
-    Download the stable version of multi theft auto san andreas with the news
-    characteristic.
+    Download the stable version of Multi Theft Auto: San Andreas with the latest
+    features and improvements.
   </p>
 </section>
 
-<section class="mt-8 max-w-7xl mx-auto px-4">
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<section class="mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
     <MtaDownloadCard
       icon={Windows}
       title="Windows"
@@ -40,6 +41,34 @@ import Linux from "./icons/Linux.astro";
       size="32.5 MB"
       description="Distribution packages (145 MB) Includes dependencies."
     />
-    <!-- Aquí podrás agregar más tarjetas para macOS y Linux -->
   </div>
+</section>
+
+<section
+  class="text-center max-w-[840px] mx-auto mt-12 border border-red-900 bg-red-400/10 rounded-lg p-4"
+>
+  <h2 class="text-yellow-500 text-xl gap-x-2 font-semibold flex items-center">
+    <Dangerous />
+    <span class="text-white">System Requirements</span>
+  </h2>
+  <main class="mx-12 text-left flex gap-x-12">
+    <ul class="mt-4">
+      <p class="text-white font-bold">Minimes:</p>
+      <li class="text-gray-400">GTA: San Andreas (versión 1.0 US/EU)</li>
+      <li class="text-gray-400">Windows 7 or upper / macOS 10.13+ / Linux</li>
+      <li class="text-gray-400">1 GHz processor</li>
+      <li class="text-gray-400">512 MB of RAM</li>
+      <li class="text-gray-400">DirectX 9.0c compatible graphics card</li>
+      <li class="text-gray-400">1 GB of free disk space</li>
+    </ul>
+    <ul class="mt-4">
+      <p class="text-white font-bold">Recommended:</p>
+      <li class="text-gray-400">GTA: San Andreas (versión 1.0 US/EU)</li>
+      <li class="text-gray-400">Windows 10/11 / macOS 12+ / Ubuntu 20.04+</li>
+      <li class="text-gray-400">2 GHz processor or higher</li>
+      <li class="text-gray-400">2GB of RAM</li>
+      <li class="text-gray-400">Graph card with 512 MB of VRAM</li>
+      <li class="text-gray-400">2GB of free disk space</li>
+    </ul>
+  </main>
 </section>

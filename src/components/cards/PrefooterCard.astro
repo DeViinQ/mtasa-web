@@ -1,0 +1,17 @@
+---
+const { icon: Icon, title, description } = Astro.props;
+---
+
+<div
+  class="text-center items-center bg-gray-900/40 text-white py-4 max-w-[450px] border border-gray-600 rounded-xl hover:border-blue-900 transition-all duration-300 cursor-pointer"
+>
+  <figure
+    class="text-center text-blue-500 text-xl bg-blue-900/50 rounded-full p-4 w-20 h-20 mx-auto"
+  >
+    <Icon size="48" />
+  </figure>
+  <div class="mt-4 px-2">
+    <h3 class="text-2xl font-bold">{title}</h3>
+    <p class="text-gray-400 mt-2">{description}</p>
+  </div>
+</div>

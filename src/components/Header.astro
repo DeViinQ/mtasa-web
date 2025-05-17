@@ -1,53 +1,134 @@
 ---
-
+import { initMobileMenu } from "./scripts/header";
 ---
 
 <header
-  class="bg-white/10 fixed top-0 right-0 w-full z-20 flex justify-between items-center px-12 py-4 backdrop-blur-md rounded-lg text-white"
+  class="bg-white/10 fixed top-0 left-0 w-full z-20 backdrop-blur-md text-white"
 >
-  <section class="flex items-center gap-4">
-    <figure class="hover:scale-110 transition-all duration-200">
-      <a href="/">
-        <img
-          src="./src/assets/logos/logoavatar.png"
-          alt="Logo"
-          class="w-12 h-12"
-        />
-      </a>
-    </figure>
-    <div>
-      <h3 class="text-blue-400 text-xl font-bold">Multi Theft Auto:SA</h3>
-      <span class="text-sm">v1.6 release</span>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <section class="flex items-center gap-4">
+        <figure class="hover:scale-110 transition-all duration-200">
+          <a href="/">
+            <img
+              src="./src/assets/logos/logoavatar.png"
+              alt="Logo"
+              class="w-12 h-12"
+            />
+          </a>
+        </figure>
+        <div>
+          <h3 class="text-blue-400 text-xl font-bold">Multi Theft Auto:SA</h3>
+          <span class="text-sm">v1.6 release</span>
+        </div>
+      </section>
+
+      <!-- Desktop menu -->
+      <ul class="hidden md:flex gap-6 font-medium">
+        <li>
+          <a
+            href="/"
+            class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
+            >Characteristic</a
+          >
+        </li>
+        <li>
+          <a
+            href="/"
+            class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
+            >Servers</a
+          >
+        </li>
+        <li>
+          <a
+            href="/"
+            class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
+            >Resources</a
+          >
+        </li>
+        <li>
+          <a
+            href="/"
+            class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
+            >Wiki</a
+          >
+        </li>
+      </ul>
+
+      <!-- Mobile menu button -->
+      <button
+        type="button"
+        id="mobile-menu-button"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <!-- Icon when menu is closed -->
+        <svg
+          class="icon-open block h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- Icon when menu is open -->
+        <svg
+          class="icon-close hidden h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
-  </section>
-  <ul class="flex gap-4 font-medium">
-    <li>
-      <a
-        href="/"
-        class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
-        >Characteristic</a
-      >
-    </li>
-    <li>
-      <a
-        href="/"
-        class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
-        >Servers</a
-      >
-    </li>
-    <li>
-      <a
-        href="/"
-        class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
-        >Resources</a
-      >
-    </li>
-    <li>
-      <a
-        href="/"
-        class="hover:text-blue-400 text-lg font-semibold transition-all duration-200"
-        >Wiki</a
-      >
-    </li>
-  </ul>
+
+    <!-- Mobile menu -->
+    <div
+      class="md:hidden fixed inset-y-0 right-0 w-64 bg-gray-900 transform transition-transform duration-300 ease-in-out translate-x-full"
+      id="mobile-menu"
+    >
+      <div class="pt-20 pb-3 space-y-1 px-4">
+        <a
+          href="/"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-gray-800"
+          >Characteristic</a
+        >
+        <a
+          href="/"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-gray-800"
+          >Servers</a
+        >
+        <a
+          href="/"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-gray-800"
+          >Resources</a
+        >
+        <a
+          href="/"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-400 hover:bg-gray-800"
+          >Wiki</a
+        >
+      </div>
+    </div>
+  </div>
 </header>
+
+<script type="module">
+  import { initMobileMenu } from "./scripts/header";
+  document.addEventListener("DOMContentLoaded", initMobileMenu);
+</script>

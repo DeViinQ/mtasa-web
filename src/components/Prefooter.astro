@@ -1,0 +1,33 @@
+---
+import Title from "./ui/Title.astro";
+import PrefooterCard from "./cards/PrefooterCard.astro";
+import Chat from "./icons/Chat.astro";
+import Book from "./icons/Book.astro";
+import Github from "./icons/Github.astro";
+---
+
+<section class="text-center mt-24 items-center">
+  <Title title="Do you need help?" />
+  <p class="text-gray-400 mt-2 text-xl">
+    Find help in our community and official resources
+  </p>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-4 md:gap-8 mt-8 px-4 md:px-8 lg:px-24 xl:px-48"
+  >
+    <PrefooterCard
+      icon={Chat}
+      title="Forums"
+      description="Ask the community and find solutions to common problems"
+    />
+    <PrefooterCard
+      icon={Book}
+      title="Official Wiki"
+      description="Full documentation, tutorials and scripting guides"
+    />
+    <PrefooterCard
+      icon={Github}
+      title="GitHub"
+      description="Report bugs, contribute to code and follow development"
+    />
+  </div>
+</section>

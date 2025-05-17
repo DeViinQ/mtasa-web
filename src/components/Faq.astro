@@ -2,24 +2,45 @@
 import Title from "../components/ui/Title.astro";
 ---
 
-<section class="mt-36 text-center max-w-4/5 mx-auto px-8 md:px-24 mb-20">
+<section class="mt-36 text-center px-4 sm:px-6 lg:px-24 mb-20" id="faq">
+  <script>
+    import { initFaq } from "./scripts/faq";
+    document.addEventListener("DOMContentLoaded", initFaq);
+  </script>
   <Title title="Frequently Asked Questions" />
   <p class="text-gray-400 text-xl mt-3 max-w-2xl mx-auto">
     Find answers to the most common questions about Multi Theft Auto: San
     Andreas.
   </p>
 
-  <div class="mt-8 max-w-3xl mx-auto">
+  <div class="mt-8 max-w-3xl mx-auto space-y-4">
     <!-- FAQ Item 1 -->
-    <div class="faq-item mb-4">
+    <div class="faq-item">
       <button
-        class="faq-question w-full text-left p-4 bg-gray-800 rounded-lg text-white font-medium flex justify-between items-center hover:bg-gray-700 transition-all duration-300 cursor-pointer"
+        class="faq-question w-full text-left p-4 bg-gray-800/80 backdrop-blur-sm rounded-lg text-white font-medium flex justify-between items-center hover:bg-gray-700/80 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+        aria-expanded="false"
+        aria-controls="faq-answer-1"
       >
         <span>What is Multi Theft Auto: San Andreas?</span>
-        <span class="plus-icon">+</span>
+        <span class="plus-icon transform transition-transform duration-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+          </svg>
+        </span>
       </button>
       <div
-        class="faq-answer bg-gray-800 bg-opacity-50 rounded-b-lg p-5 text-gray-300 mt-1 hidden overflow-hidden transition-all duration-300 max-h-0 opacity-0"
+        id="faq-answer-1"
+        class="faq-answer bg-gray-800/50 backdrop-blur-sm rounded-b-lg p-5 text-gray-300 mt-1 hidden overflow-hidden transition-all duration-300 max-h-0 opacity-0"
       >
         <p>
           Multi Theft Auto: San Andreas (MTA:SA) is a multiplayer modification
